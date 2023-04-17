@@ -11,13 +11,15 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        .logo{
+            font-size: 20px;
+            font-weight: bold;
+            color:purple;
+        }
     }
 
-    .logo{
-        font-size: 20px;
-        font-weight: bold;
-        color:purple;
-    }
+    
 
     hr{
         height: 0;

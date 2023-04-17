@@ -10,19 +10,29 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Routes>
-          <Route path='/' element= {<Home />} />
-          <Route path='/login' element = {<Login />} />
-          <Route path='/users' element = {<List />} >
-              <Route path=':userId' element= {<Single />} />
-              <Route path='new' element= {<New />} />
+        <Routes>
+          <Route path="/">
+            <Route index element={<Home />} />
+            <Route path="login" element={<Login />} />
+            <Route path="users">
+              <Route index element={<List />} />
+              <Route path=":userId" element={<Single />} />
+              <Route
+                path="new"
+                element={<New  title="Add New User" />}
+              />
+            </Route>
+            <Route path="products">
+              <Route index element={<List />} />
+              <Route path=":productId" element={<Single />} />
+              <Route
+                path="new"
+                element={<New title="Add New Product" />}
+              />
+            </Route>
           </Route>
-          <Route path='/products' element={<List />} >
-              <Route path=":productId" element = {<Single />} />
-              <Route path="new" element = {<New />} />
-          </Route>
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
   );
 }
 
